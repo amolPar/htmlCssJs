@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+</head>
+<body>
+    <p id="time"></p>
+    <h1>Indian Team</h1>
+    <p id="team">Indian cricket team has flown to Australia to play T-20 World cup 2022. This team is led by Rohit Sharma as a captain and K L Rahul as vic captain. They both are openers as well. Then we have Virat Kohli, Suryakumar Yadav, Dinesh Kartik, Rishabh Pant as batsman. Hardik Pandya, Akshar Patel and Ravi Ashvin as allrounder. Yuzi Chahal as spinner and Shami, Bhuvneshvar Kumar, Arshdeep Singh and Harshal Patel as Fast Bowlers. The team looks pretty good but still bowling in death overs is a bit concern because of absence of Jasprit Bumrah. The team will play its 1st match against their arch rivals Pakistan on 23rd October. last t-20 world cup won by India was in 2007. lets hope this drought will end this year.  
+    </p>
+    <button type="button" onclick="document.getElementById('team').innerHTML=''">Hide</button>
+    <h1>Playing XI</h1>
+    <p id="playing"></p>
+    <button onclick="myFunction()">12th Man</button><br><br>
+    <button onclick="myCount()">Count</button><br>
+    <p id="moj">0</p>
+
+
+    <script>
+        function displayTime(){
+        let time= Date();
+        document.getElementById('time').innerHTML= time;}
+        setInterval(displayTime,1000)
+        const players=["Rohit","K L Rahul","Virat", "Suryakumar","Hardik","Kartik","Akshar","Bhuvneshvar","Shami","Arshdeep","Chahal"];
+        let count=players.length;
+        let text="<ul>";
+            for( let i=0; i<count; i++){
+                text+="<li>"+players[i] +"</li>";
+                
+            }
+            text+="</ul>";
+            document.getElementById("playing").innerHTML=text;
+        
+            function myFunction(){
+                players.push("Harshal");
+                document.getElementById("playing").innerHTML=players;
+            }
+            const add=(function(){
+                let counter=0;
+                return function(){ counter+=1; return counter;}
+
+            })();
+            function myCount(){
+                document.getElementById("moj").innerHTML=add();
+            }
+    </script>
+    
+</body>
+</html>

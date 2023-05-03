@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #joke {font-style: italic;
+            font-size: 20px;
+            font-weight: bold;
+            color: crimson;
+            background-color: rgb(125, 224, 224);
+            height: 200px;
+            width: 150px;
+            text-align: center;
+            justify-content: center;
+            
+            
+
+        }
+    </style>
+</head>
+<body>
+    <button onclick="myJoke()">Tell me a joke</button>
+    <div id="joke"></div>
+
+    <script>
+        function myJoke(){
+  let jkn=Math.floor(Math.random()*10)
+let jk=[" I failed math so many times at school, I can’t even count.","I was wondering why the frisbee kept getting bigger and bigger, but then it hit me.","When life gives you melons, you might be dyslexic.","It takes a lot of balls to golf the way I do.","I told him to be himself; that was pretty mean, I guess.","I know they say that money talks, but all mine says is ‘Goodbye.’","Never trust atoms; they make up everything.","Always borrow money from a pessimist. They’ll never expect it back."," I don’t suffer from insanity—I enjoy every minute of it.","The last thing I want to do is hurt you; but it’s still on the list."][jkn];
+  document.getElementById("joke").innerHTML='"' +jk+'"'
+}
+    </script>
+</body>
+</html>

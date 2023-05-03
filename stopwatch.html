@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+</head>
+<body>
+    <h1>Stopwatch</h1>
+    <button onclick="Startwatch()">Start</button>
+    <button onclick="Stopwatch()">Stop</button>
+    <output id="count"></output>
+    <script>
+         let w;
+        function Startwatch(){
+           if(typeof(w)=="undefined"){
+            w=new Worker("demo_workers.js");
+           }
+           w.onmessage=function(event){
+            document.getElementById("count").innerHTML=event.data;
+
+           }
+        }
+        function Stopwatch(){
+            w.terminate()
+            w=undefined;
+        }
+    </script>
+    
+</body>
+</html>

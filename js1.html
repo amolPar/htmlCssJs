@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript1</title>
+    <script>function myfunction(){document.getElementById("jon").innerHTML="I Don't Want it..."}
+    </script>
+    <style>
+        #jon{font-size: 30px;
+        color: darkorange;
+    background-color:red;
+font-weight: bold;}
+    </style>
+</head>
+<body>
+    <p id="words" style="font-size:50px; font-weight:bolder; color:darkred; background-color:coral;">Prince that was promissed</p>
+    <button type="button" onclick="document.getElementById('words').innerHTML='Aegon Targaryen aka John Snow'"    >The Truth</button><br>
+    <button onclick="document.getElementById('myImage').src='jon snow.jpg'">The Bastard</button>
+    <img id="myImage" src="jon snow.jpg" alt="jon" style="width:300px;">
+    <button onclick="document.getElementById('myImage').src='dragon1.jpeg'">The true Heir</button>
+    <p id="jon">The Iron throne is yours your grace.</p>
+    <button onclick="myfunction()">Have it</button><br><br><br>
+    <button onclick="window.print()">Print this page</button>
+    <p id="drunk"></p>
+    <p id="Heir"></p>
+    <p id="veg"></p>
+    
+   
+
+    <script>
+        let friends=["Kangana","Rangoli","Swara","Anushka","KRK"]
+       for (let index = 0; index < friends.length; index++) {
+        console.log("Mother fucker "+ friends[index]);
+        
+       }
+        // window.alert('Winter is Coming')
+        // let nme= prompt(" what is your name ?" , "Guest");
+        // confirm("Do you really want to know the truth?");
+        let Age= prompt("What is your age?");
+        if (Age>18) {alert("You are elegible to see this page.")
+            
+        } else {alert("You are not allowed to see this page. ")
+            
+        }
+        let age=15;
+        if(age>18){document.getElementById('drunk').innerHTML="you can drink alcohol"}
+        else{document.getElementById('drunk').innerHTML="you can have soft drink"}
+        
+        let period= 23;
+        switch (period) {
+            case 18:document.getElementById('Heir').innerHTML="Have a soft drink"
+                
+                break;
+        
+            default:document.getElementById('Heir').innerHTML="Get yourself a beer"
+                break;
+        }
+        function fruit(name){document.getElementById('veg').innerHTML=name + " is a healthy fruit"
+        return;}
+        function fruit(name){console.log(name+" is a healty fruit");}
+        let name = "Apple";
+        
+        let name1 = "Mango";
+        
+        let name2 = "Orange";
+        fruit(name);
+        
+        fruit(name1);
+        
+        fruit(name2);
+        
+    </script>
+    
+</body>
+</html>

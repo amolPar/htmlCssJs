@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>About window</h2>
+    <p id="dimensions"></p>
+    <h2>About screen</h2>
+    <p id="screen"></p>
+    <p id="screen1"></p>
+    <h2>About Location</h2>
+    <p id="adrr"></p>
+    <p id="adrr1"></p>
+    <p id="adrr2"></p>
+    <button onclick="myFunction()">Click Me</button>
+    <h2>Confirm Prompt and Alert</h2>
+    <button onclick="myInfo()">Click me</button><br>
+    <p id="name"></p><br><br>
+    <button onclick="Sub()">Submit</button>
+    <button onclick="Local()">Find me</button>
+    <p id="pos"></p>
+    <script>
+        document.getElementById("dimensions").innerHTML="inner height= "+window.innerHeight+"px<br>"+"inner width="+window.innerWidth+"px"
+        document.getElementById("screen").innerHTML="screen height= "+screen.height+"px<br>"+"screen width="+screen.width+"px"
+        document.getElementById("screen1").innerHTML="screen colour depth= "+screen.colorDepth+"bit"
+        document.getElementById("adrr").innerHTML="URL of Current page= "+location.href
+        document.getElementById("adrr1").innerHTML="Domain of Current page= "+location.hostname
+        document.getElementById("adrr2").innerHTML="Filename of Current page= "+location.pathname
+        function myFunction(){
+            window.location.assign("http://127.0.0.1:5500/js1.html")
+            // window.location.assign("https://www.youtube.com/")
+        }
+        function myInfo(){
+            let name=prompt("type your name")
+            document.getElementById("name").innerHTML="Name:"+ name
+        }
+        function Sub(){
+            confirm("Are you sure to submit")
+        }
+        let x=document.getElementById("pos")
+        function Local(){
+            try{navigator.geolocation.getCurrentPosition(showPosition);
+        }
+        catch{
+            x.innerHTML=err
+        }
+    }
+    function showPosition(position){
+        x.innerHTML="Latitude: "+position.coords.latitude+"<br>Longitude: "+position.coords.longitude
+    }
+
+    </script>
+    
+</body>
+</html>
